@@ -17,6 +17,7 @@ function numeroQuestion(){
     document.getElementById("bouton4").classList.add('bouton')
 
     document.getElementById('status').innerText = "Question " + compteur
+    document.getElementById('status').style.color = "Black"
 
     flagA = false // Remise à 0 des flags après chaque validation
     flagB = false
@@ -26,7 +27,7 @@ function numeroQuestion(){
     document.getElementById("questionSuiv").style.visibility = "hidden"
 
     q = Math.floor((Math.random() * 30) +1);  //fonction de nombre aléatoire entre 1 et 30 pour var q
-    
+    while (passe.includes(q)){ q = Math.floor((Math.random() * 30) +1);}  //fonction de nombre aléatoire entre 1 et 30 pour var q
     console.log(q)
 
     document.getElementById('image').src = "images/" + q +  ".jpg" // L'image affichée est q.jpg
@@ -222,6 +223,10 @@ else{
 succes = 0
 
 function checkReponses(){
+if(reponses.length === 0){
+    alert("Attention, vous n'avez pas mis de réponse !")
+}
+else{
 document.getElementById("boutonValider").style.visibility = "hidden"
 passe.push(q) // On ajoute l'image qui vient de tomber dans le tableau de tri "passe"
 reponses.sort() // On met les reponses de l'utilisateur dans l'ordre alphabétique (Facilite la comparaison avec les bonnes reponses)
@@ -251,6 +256,7 @@ document.getElementById('status').style.color = "Red"
 compteur++
 console.log(reussite)
 document.getElementById("questionSuiv").style.visibility = "visible"
+}
 }
 
 
