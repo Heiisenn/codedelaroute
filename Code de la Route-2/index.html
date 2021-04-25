@@ -14,7 +14,7 @@
 <body onload="numeroQuestion()"">
     <div style="display: flex;">
     <img class="logo" src="images/hands.png">
-    <h1 class="title">Code de la route</h1>
+    <h1 id="status" class="title">Question 1</h1>
 </div>
     <div style="text-align: center;"><img id="image" class="question" src=""></div>
     <div class="boutons">
@@ -22,7 +22,7 @@
         <table class="choix">
             <tbody>
             <tr>
-            <td><a value="a"class="bouton" onclick="ajoutReponseA()" onclick="retraitReponseA()" id="bouton1">Réponse A</td>
+            <td><a value="a"class="bouton" onclick="ajoutReponseA()" id="bouton1">Réponse A</td>
             <td><a value="b"class="bouton"  onclick="ajoutReponseB()"id="bouton2">Réponse B</td>
             </tr>
             <tr>
@@ -36,6 +36,9 @@
             </table>
             
             
+</div>
+<div style="text-align: center;">
+<a id="questionSuiv" style="text-align: center; visibility: hidden;" class="bouton" onclick="numeroQuestion()">Question suivante</a>
 </div>
 </body>
 </html>

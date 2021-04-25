@@ -1,10 +1,131 @@
+var q = 0
+
 function numeroQuestion(){
 
+    reponses = []
+
+    document.getElementById("bouton1").classList.remove('active')
+    document.getElementById("bouton1").classList.add('bouton')
+
+    document.getElementById("bouton2").classList.remove('active')
+    document.getElementById("bouton2").classList.add('bouton')
+
+    document.getElementById("bouton3").classList.remove('active')
+    document.getElementById("bouton3").classList.add('bouton')
+
+    document.getElementById("bouton4").classList.remove('active')
+    document.getElementById("bouton4").classList.add('bouton')
+
+    document.getElementById('status').innerText = "Question " + compteur
+
+    flagA = false // Remise à 0 des flags après chaque validation
+    flagB = false
+    flagC = false
+    flagD = false
+
+    document.getElementById("questionSuiv").style.visibility = "hidden"
+
     q = Math.floor((Math.random() * 30) +1);  //fonction de nombre aléatoire entre 1 et 30 pour var q
+    
     console.log(q)
 
     document.getElementById('image').src = "images/" + q +  ".jpg" // L'image affichée est q.jpg
+
+    if(q == 1){
+        window.reponsesq = ["a"]
+    }
+    if(q == 2){
+        window.reponsesq = ["c"]
+    }
+    if(q == 3){
+        window.reponsesq = ["a","c"]
+    }
+    if(q == 4){
+        window.reponsesq = ["a"]
+    }
+    if(q == 5){
+        window.reponsesq = ["a","c"]
+    }
+    if(q == 6){
+        window.reponsesq = ["a"]
+    }
+    if(q == 7){
+        window.reponsesq = ["b","c"]
+    }
+    if(q == 8){
+        window.reponsesq = ["b","c"]
+    }
+    if(q == 9){
+        window.reponsesq = ["a","c"]
+    }
+    if(q == 10){
+        window.reponsesq = ["b"]
+    }
+    if(q == 11){
+        window.reponsesq = ["b"]
+    }
+    if(q == 12){
+        window.reponsesq = ["a","c"]
+    }
+    if(q == 13){
+        window.reponsesq = ["b","c"]
+    }
+    if(q == 14){
+        window.reponsesq = ["a","c"]
+    }
+    if(q == 15){
+        window.reponsesq = ["b","d"]
+    }
+    if(q == 16){
+        window.reponsesq = ["a","d"]
+    }
+    if(q == 17){
+        window.reponsesq = ["b"]
+    }
+    if(q == 18){
+        window.reponsesq = ["a","c"]
+    }
+    if(q == 19){
+        window.reponsesq = ["b"]
+    }
+    if(q == 20){
+        window.reponsesq = ["a","c"]
+    }
+    if(q == 21){
+        window.reponsesq = ["a"]
+    }
+    if(q == 22){
+        window.reponsesq = ["a"]
+    }
+    if(q == 23){
+        window.reponsesq = ["a","c"]
+    }
+    if(q == 24){
+        window.reponsesq = ["a","c"]
+    }
+    if(q == 25){
+        window.reponsesq = ["a","b"]
+    }
+    if(q == 26){
+        window.reponsesq = ["a","c"]
+    }
+    if(q == 27){
+        window.reponsesq = ["b"]
+    }
+    if(q == 28){
+        window.reponsesq = ["a","c"]
+    }
+    if(q == 29){
+        window.reponsesq = ["a","c"]
+    }
+    if(q == 30){
+        window.reponsesq = ["a"]
+    }
+
+
 }
+
+let compteur = 1
 
 let passe = [] // déclaration du tableau qui va être utilisé afin de trier les images déjà passées ou non
 
@@ -104,10 +225,19 @@ passe.push(q) // On ajoute l'image qui vient de tomber dans le tableau de tri "p
 reponses.sort() // On met les reponses de l'utilisateur dans l'ordre alphabétique (Facilite la comparaison avec les bonnes reponses)
 console.log(reponses)
 
-if (reponses == reponsesq){ // comparaison, il faut que je trouve un bon moyen de le faire
-
-
+if (JSON.stringify(reponses) === JSON.stringify(window.reponsesq)){ // comparaison, il faut que je trouve un bon moyen de le faire
+let reussite = true
+document.getElementById('status').innerText = "Question " + compteur + " : Succès !"
+compteur++
+console.log(reussite)
+document.getElementById("questionSuiv").style.visibility = "visible"
 }
-
+else{
+let reussite = false
+document.getElementById('status').innerText = "Question " + compteur + " : échec :("
+compteur++
+console.log(reussite)
+document.getElementById("questionSuiv").style.visibility = "visible"
+}
 
 }
