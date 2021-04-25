@@ -22,7 +22,7 @@ function numeroQuestion(){
     flagB = false
     flagC = false
     flagD = false
-
+    document.getElementById("boutonValider").style.visibility = "visible"
     document.getElementById("questionSuiv").style.visibility = "hidden"
 
     q = Math.floor((Math.random() * 30) +1);  //fonction de nombre aléatoire entre 1 et 30 pour var q
@@ -219,8 +219,10 @@ else{
 }
 }
 
+succes = 0
 
 function checkReponses(){
+document.getElementById("boutonValider").style.visibility = "hidden"
 passe.push(q) // On ajoute l'image qui vient de tomber dans le tableau de tri "passe"
 reponses.sort() // On met les reponses de l'utilisateur dans l'ordre alphabétique (Facilite la comparaison avec les bonnes reponses)
 console.log(reponses)
@@ -228,16 +230,35 @@ console.log(reponses)
 if (JSON.stringify(reponses) === JSON.stringify(window.reponsesq)){ // comparaison, il faut que je trouve un bon moyen de le faire
 let reussite = true
 document.getElementById('status').innerText = "Question " + compteur + " : Succès !"
+document.getElementById('status').style.color = "Green"
 compteur++
+succes++
 console.log(reussite)
+if(succes == 5){
+    compteur--
+    let fini = true
+    console.log(fini)
+    document.getElementById("questionSuiv").innerText = "Résultats"
+    document.getElementById("questionSuiv").setAttribute('onclick', "resultats()")
+}
+
 document.getElementById("questionSuiv").style.visibility = "visible"
 }
 else{
 let reussite = false
 document.getElementById('status').innerText = "Question " + compteur + " : échec :("
+document.getElementById('status').style.color = "Red"
 compteur++
 console.log(reussite)
 document.getElementById("questionSuiv").style.visibility = "visible"
+}
+
+
+}
+
+function resultats(){
+    if(confirm('Vous avez 5 réponses correctes sur ' + compteur +' questions ! Pour recommencer, cliquez sur OK :)')){
+    window.location.reload();  
 }
 
 }
