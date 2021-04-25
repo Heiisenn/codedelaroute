@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code de la route</title>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body onload="numeroQuestion()"">
+    <div style="display: flex;">
+    <img class="logo" src="images/hands.png">
+    <h1 class="title">Code de la route</h1>
+</div>
+    <div style="text-align: center;"><img id="image" class="question" src=""></div>
+    <div class="boutons">
+        
+        <table class="choix">
+            <tbody>
+            <tr>
+            <td><a value="a"class="bouton" onclick="ajoutReponseA()" onclick="retraitReponseA()" id="bouton1">Réponse A</td>
+            <td><a value="b"class="bouton"  onclick="ajoutReponseB()"id="bouton2">Réponse B</td>
+            </tr>
+            <tr>
+            <td><a value="c"class="bouton" onclick="ajoutReponseC()"id="bouton3">Réponse C</td>
+            <td><a value="d"class="bouton" onclick="ajoutReponseD()"id="bouton4">Réponse D</td>
+            </tr>
+            <tr>
+            <td class="validation" COLSPAN="2" onclick="checkReponses()"><a class="valider"> Valider !</a></td> 
+            </tr>
+            </tbody>
+            </table>
+            
+            
+</div>
+</body>
+</html>

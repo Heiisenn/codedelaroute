@@ -1,0 +1,98 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(230, 230, 230);
+}
+
+.title{
+text-align: center;
+color : #000;
+font-weight: 400;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+.logo{
+    width: 8rem;
+    position: absolute;
+}
+
+.question{
+width: 50%;
+border-radius: 12px;
+margin-right: auto;
+margin-left: auto;
+box-shadow: 1px 1px 1px rgb(68, 68, 68);
+}
+
+.choix{
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bouton{
+    padding: 15px;
+    border: 0;
+    line-height: 2.5;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+    color: #000;
+    border-radius: 10px;
+    border: 2px solid #118AB2;
+    cursor: pointer;
+}
+
+.valider{
+    padding: 10px;
+    border: 0;
+    line-height: 2.5;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #0f9e0f;
+    border-radius: 10px;
+    border: 2px solid #0f9e0f;
+    cursor: pointer;
+}
+
+.valider:hover{
+    padding: 10px;
+    border: 0;
+    line-height: 2.5;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    border: 2px solid #0f9e0f;
+    background-color: #0f9e0f;
+    cursor: pointer;
+}
+
+.bouton:hover {
+    background-color: #06D6A0;
+}
+
+td{
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.validation{
+padding-top: 30px;
+}
+
+.active{
+    padding: 15px;
+    border: 0;
+    line-height: 2.5;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    border: 2px solid #118AB2;
+    background-color: #118AB2;
+    cursor: pointer;
+}
