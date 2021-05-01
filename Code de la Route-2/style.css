@@ -119,3 +119,11 @@ padding-top: 30px;
     background-color: #118AB2;
     cursor: pointer;
 }
+
+.correction{
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1000px;
+    
+}
